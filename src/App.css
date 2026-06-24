@@ -1,0 +1,312 @@
+/* ================================
+   GLOBAL
+=================================== */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e1b4b, #0f172a);
+  font-family: "Poppins", sans-serif;
+  color: #e4e2f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 80px 0;
+}
+/* ================================
+   NAVBAR
+=================================== */
+.navbar {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: 700;
+  color: #38bdf8 !important;
+}
+
+.nav-link {
+  color: #e2e8f0 !important;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.nav-link:hover {
+  color: #38bdf8 !important;
+  transform: translateY(-2px);
+}
+
+.resume-btn {
+  background: #2563eb !important;
+  border-radius: 25px;
+  padding: 6px 18px;
+  transition: 0.3s;
+}
+
+.resume-btn:hover {
+  background: #1e40af !important;
+  transform: scale(1.05);
+}
+
+/* ================================
+   HERO SECTION
+=================================== */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 3.5rem 0;
+  background: linear-gradient(135deg, #312e81, #4b1b3d);
+  color: white;
+}
+
+.profile-pic {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+  transition: 0.35s;
+  animation: pulseGlow 3s infinite;
+}
+
+.profile-pic:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
+  50% { box-shadow: 0 0 35px rgba(56, 189, 248, 0.8); }
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  margin-top: 25px;
+}
+
+.hero-title span {
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+.hero-sub {
+  font-size: 22px;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.hero-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  margin: 8px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+.btn-outline-light {
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn-outline-light:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-primary {
+  background: #2563eb;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* ================================
+   GLASS CARDS
+=================================== */
+.card-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  border-radius: 15px;
+  padding: 22px;
+  transition: 0.35s;
+}
+
+.card-glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+/* ================================
+   SECTION TITLES
+=================================== */
+.section-title {
+  color: #38bdf8;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* ================================
+   CONTACT & FOOTER
+=================================== */
+.contact-link, footer a {
+  color: #e2e8f0;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.contact-link:hover, footer a:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
+}
+
+footer {
+  background: #0f172a;
+  padding: 18px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* ================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 768px) {
+  .hero-title { font-size: 36px; }
+  .hero-sub { font-size: 18px; }
+  .profile-pic { width: 140px; height: 140px; }
+}
+.text-muted{
+  color: white;
+}
+/* About Me Text */
+#about p,
+#about ul,
+#about li {
+  color: #e2e8f0; /* light gray, easily readable on dark bg */
+}
+
+#about ul li {
+  margin-bottom: 6px;
+}
+
+/* ---------- PROJECTS ---------- */
+.project-title {
+  color: #38bdf8; /* bright coral */
+  font-weight: 600;
+}
+
+.project-desc {
+  color: #f0f0f0; /* light grey for readability */
+}
+
+.project-tech {
+  color: #38bdf8; /* bright cyan for tech stack */
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Optional: style for card-glass background */
+.card-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timeline {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.timeline-card {
+  position: relative;
+}
+
+.timeline-label {
+  font-size: 0.8rem;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-control-dark {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: #e2e8f0;
+}
+
+.form-control-dark:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.2);
+  color: #e2e8f0;
+}
+
+.contact-card-links a {
+  color: #e2e8f0;
+}
+
+.contact-card-links a:hover {
+  color: #38bdf8;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #38bdf8; /* bright coral */
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: white; /* cyan */
+}
+.custom-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
