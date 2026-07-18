@@ -4,7 +4,7 @@ import "./App.css";
 import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaArrowUp } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaArrowUp, FaCode, FaBrain, FaRocket } from "react-icons/fa";
 import profilePic from "./profile.jpg";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -26,6 +26,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <WhatIDo />
         <Skills />
         <Experience />
         <Certificates />
@@ -159,6 +160,43 @@ function Stat({ label, value }) {
       <div className="stat-value">{value}</div>
       <div className="stat-label">{label}</div>
     </div>
+  );
+}
+
+function WhatIDo() {
+  const highlights = [
+    {
+      icon: <FaCode />,
+      title: "Full-Stack Development",
+      description: "I build responsive web apps with React, Next.js, and reliable APIs that feel polished and fast."
+    },
+    {
+      icon: <FaBrain />,
+      title: "AI/ML Solutions",
+      description: "I turn ideas into practical machine learning workflows, from data prep to intelligent user experiences."
+    },
+    {
+      icon: <FaRocket />,
+      title: "Product Mindset",
+      description: "I focus on clean architecture, thoughtful UX, and measurable impact for real-world users."
+    }
+  ];
+
+  return (
+    <section id="what-i-do" className="container py-5">
+      <h2 className="section-title fs-3 mb-4">What I Do</h2>
+      <div className="row g-4">
+        {highlights.map((item, idx) => (
+          <div className="col-md-4" key={item.title} data-aos="fade-up" data-aos-delay={idx * 80}>
+            <div className="p-4 card-glass rounded shadow-sm h-100 highlight-card">
+              <div className="highlight-icon">{item.icon}</div>
+              <h5 className="mt-3 mb-2">{item.title}</h5>
+              <p className="mb-0">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
