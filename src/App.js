@@ -7,6 +7,8 @@ import "aos/dist/aos.css";
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaArrowUp } from "react-icons/fa";
 import profilePic from "./profile.jpg";
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -56,9 +58,9 @@ function Navbar() {
             <li className="nav-item"><a className="nav-link" href="#achievements">Achievements</a></li>
             <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
             <li className="nav-item ms-3">
-              <a className="btn btn-primary btn-sm d-flex align-items-center" href="/resume.pdf" download>
-                <FaDownload className="me-2" /> Resume
-              </a>
+              <a className="btn btn-primary btn-sm d-flex align-items-center" href={`${PUBLIC_URL}/main_resume.pdf`} download>
+                  <FaDownload className="me-2" /> Download Software Engineering Resume
+                </a>
             </li>
           </ul>
         </div>
@@ -85,13 +87,13 @@ function Hero() {
             <Typewriter
               options={{
                 strings: [
-  "Analytical Data & ML Engineer 📊",
-  "Finance Research Analyst Aspirant 📈",
-  "AI Resume Screening, Stock Forecasting, and Predictive Analytics",
-  "Python, ML, NLP, and Data Visualization Enthusiast",
-  "400+ Problems Solved 🚀",
-  "Open to Research, Internship, and Full-Time Opportunities"
-],
+                  "Software Engineer | Full-Stack Developer 💻",
+                  "AI/ML Enthusiast building intelligent products 🤖",
+                  "Next.js, React, Python, Java, and Spring Boot",
+                  "Building end-to-end web apps and intelligent systems",
+                  "400+ Problems Solved 🚀",
+                  "Open to Software Engineering, Full-Stack, and AI/ML roles"
+                ],
                 autoStart: true,
                 loop: true,
                 delay: 40,
@@ -101,9 +103,9 @@ function Hero() {
           </div>
 
           <div className="d-flex gap-3 justify-content-center">
-            <a className="btn hero-btn btn-outline-light btn-sm" href="#projects">See Projects</a>
-            <a className="btn hero-btn btn-primary btn-sm d-flex align-items-center" href="/resume.pdf" download>
-              <FaDownload className="me-2" /> Download Resume
+            <a className="btn hero-btn btn-outline-light btn-sm" href="#projects">Explore Projects</a>
+            <a className="btn hero-btn btn-primary btn-sm d-flex align-items-center" href={`${PUBLIC_URL}/main_resume.pdf`} download>
+              <FaDownload className="me-2" /> Download Software Engineering Resume
             </a>
           </div>
         </div>
@@ -120,11 +122,11 @@ function About() {
         <div className="col-md-6" data-aos="fade-right">
           <h2 className="section-title fs-3">About Me</h2>
           <p className="fs-5" style={{ color: "#e2e8f0" }}>
-  Analytical Computer Science undergraduate with strong skills in data collection, interpretation, and visualization.
-  Experienced in building data-driven systems using Python and machine learning.
-  Seeking a Finance Research Analyst role to apply critical thinking, problem solving, and data analysis skills to
-  track portfolio performance, interpret financial data, and support investment research and decision-making.
-</p>
+            Analytical Computer Science undergraduate focused on software engineering, full-stack development,
+            and AI/ML. I enjoy building end-to-end products using Python, Java, React, and modern web technologies,
+            from responsive web applications to intelligent machine learning workflows. I am actively seeking opportunities
+            in software engineering, full-stack development, and AI/ML roles.
+          </p>
           <div className="mt-4" style={{ color: "#e2e8f0" }}>
             <h5 className="mb-3">Education</h5>
             <ul className="list-unstyled">
@@ -163,25 +165,25 @@ function Stat({ label, value }) {
 /* ---------- SKILLS ---------- */
 function Skills() {
   const skills = [
-  "Python",
-  "Java",
-  "JavaScript",
-  "React",
-  "Spring Boot",
-  "SQL",
-  "MongoDB",
-  "Pandas",
-  "NumPy",
-  "Scikit-learn",
-  "XGBoost",
-  "Data Visualization",
-  "Matplotlib",
-  "Seaborn",
-  "NLP",
-  "yfinance",
-  "Financial Analysis",
-  "Git"
-];
+    "Python",
+    "Java",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Spring Boot",
+    "SQL",
+    "MongoDB",
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "XGBoost",
+    "Data Visualization",
+    "Matplotlib",
+    "Seaborn",
+    "NLP",
+    "Git"
+  ];
   return (
     <section id="skills" className="container py-5">
       <h2 className="section-title fs-3 mb-4">Skills</h2>
@@ -212,12 +214,6 @@ function Experience() {
       period: "Jun 2024 – Aug 2024",
       details: "Developed responsive React frontends, integrated REST APIs, and refactored reusable component architecture."
     },
-    {
-      role: "Data Research Intern",
-      company: "Remote Projects",
-      period: "2023",
-      details: "Delivered analytics-backed models and visualizations focused on predictive insights and decision support."
-    }
   ];
 
   return (
@@ -250,56 +246,77 @@ function BackToTop({ visible }) {
 }
 
 function Certificates() {
-  const certificates = [ 
-  {
-    title: "Virtual Internship Program - ServiceNow",
-    issuer: "SmartBridge",
-    year: "2025",
-    link: "/certificates/p1.pdf"
-  },
-  {
-    title: "Introduction to Generative AI",
-    issuer: "IBM",
-    year: "2025",
-    link: "/certificates/p2.pdf"
-  },
-  {
-    title: "TCS iON Career Edge Young Professional",
-    issuer: "TCS",
-    year: "2025",
-    link: "/certificates/p3.pdf"
-  },
-  {
-    title: "Oracle AI Foundations Associate",
-    issuer: "Oracle",
-    year: "2025",
-    link: "/certificates/p4.pdf"
-  },
-  {
-    title: "Salesforce Agentforce Specialist",
-    issuer: "Salesforce",
-    year: "2025",
-    link: "/certificates/Salesforce_Agent.pdf"
-  },
-  {
-    title: "Salesforce Platform Developer I",
-    issuer: "Salesforce",
-    year: "2026",
-    link: "/certificates/Salesforces_PDA1.pdf"
-  },
-  {
-    title: "Infosys Java Foundation Certification",
-    issuer: "Infosys",
-    year: "2025",
-    link: "/certificates/infosis_cert.pdf"
-  }
-];
-return (
+  const featuredCertificates = [
+    {
+      title: "Salesforce Certified Platform Developer I",
+      issuer: "Salesforce",
+      year: "2026",
+      link: `${PUBLIC_URL}/certificates/Salesforces_PDA1.pdf`
+    },
+    {
+      title: "Salesforce Certified Agentforce Specialist",
+      issuer: "Salesforce",
+      year: "2025",
+      link: `${PUBLIC_URL}/certificates/Salesforce_Agent.pdf`
+    },
+    {
+      title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+      issuer: "Oracle",
+      year: "2025",
+      link: `${PUBLIC_URL}/certificates/p4.pdf`
+    },
+    {
+      title: "NPTEL Programming in Java (Elite)",
+      issuer: "IIT Kharagpur",
+      year: "2025",
+      link: `${PUBLIC_URL}/certificates/NPTEL_Programming_in_Java.pdf`
+    },
+    {
+      title: "Microsoft & SAP AICTE TechSaksham - AI Internship",
+      issuer: "AICTE TechSaksham",
+      year: "2025",
+      link: `${PUBLIC_URL}/certificates/Aicte_certificate.pdf`
+    },
+    {
+      title: "Infosys Java Foundation Certification",
+      issuer: "Infosys",
+      year: "2025",
+      link: `${PUBLIC_URL}/certificates/infosis_cert.pdf`
+    },
+    {
+      title: "IBM SkillsBuild - Introduction to Generative AI",
+      issuer: "IBM",
+      year: "2025",
+      link: `${PUBLIC_URL}/certificates/IBM_Generative_AI.pdf`
+    },
+    {
+      title: "TCS iON Career Edge - Young Professional",
+      issuer: "TCS",
+      year: "2025",
+      link: `${PUBLIC_URL}/certificates/TCS_Career_Edge.pdf`
+    }
+  ];
+
+  const otherCertificates = [
+    "HP LIFE Data Science & Analytics",
+    "IBM Python 101",
+    "Deloitte Data Analytics Job Simulation",
+    "Accenture Software Engineering Job Simulation",
+    "Intel AI For All",
+    "Simplilearn Django",
+    "LinkedIn Algorithms",
+    "Infosys additional certifications"
+  ];
+
+  return (
     <section id="certificates" className="container py-5">
-      <h2 className="section-title fs-3 mb-4 text-center">Certificates</h2>
+      <div className="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
+        <h2 className="section-title fs-3 mb-2 mb-md-0">Featured Certifications</h2>
+        <a className="btn btn-sm btn-outline-light" href="#other-certifications">View All Certifications</a>
+      </div>
 
       <div className="row g-4">
-        {certificates.map((c, idx) => (
+        {featuredCertificates.map((c, idx) => (
           <div className="col-md-6 col-lg-4" key={idx} data-aos="fade-up">
             <div className="p-4 card-glass rounded shadow-sm h-100 text-center certificate-card">
               <h5 className="mb-2">{c.title}</h5>
@@ -307,10 +324,10 @@ return (
               <p className="mb-3" style={{ color: "#e2e8f0" }}>{c.year}</p>
 
               {c.link && (
-                <a 
-                  className="btn btn-sm btn-outline-light" 
-                  href={c.link} 
-                  target="_blank" 
+                <a
+                  className="btn btn-sm btn-outline-light"
+                  href={c.link}
+                  target="_blank"
                   rel="noreferrer"
                 >
                   View Certificate
@@ -320,61 +337,112 @@ return (
           </div>
         ))}
       </div>
+
+      <div id="other-certifications" className="mt-5">
+        <h3 className="section-title fs-4 mb-3">Other Certifications</h3>
+        <div className="row g-3">
+          {otherCertificates.map((item, idx) => (
+            <div className="col-md-6 col-lg-4" key={idx} data-aos="fade-up">
+              <div className="p-3 card-glass rounded shadow-sm h-100">
+                <p className="mb-0">{item}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
 /* ---------- PROJECTS ---------- */
 function Projects() {
-  const projects = [
-  {
-    title: "Stock Market Trend Analysis & Investment Signal System",
-    desc: "Collected 5+ years of stock data with yfinance, applied SMA/EMA/RSI/MACD indicators, and built visualizations to support investment research.",
-    tech: "Python, Pandas, NumPy, Matplotlib, Seaborn, yfinance, Scikit-learn",
-    github: "https://github.com/sandeepreddy0485"
-  },
-  {
-    title: "Smart Rainfall & Drought Prediction System",
-    desc: "Integrated 10+ years of climate datasets, engineered features, and benchmarked Random Forest and XGBoost models to predict drought patterns.",
-    tech: "Python, Scikit-learn, XGBoost, Random Forest, Pandas, NumPy, Matplotlib, Seaborn",
-    github: "https://github.com/sandeepreddy0485/rainfall-ai-project"
-  },
-  {
-    title: "AI-Driven Resume Screening System",
-    desc: "Engineered an ML ranking pipeline with TF-IDF and cosine similarity to automate candidate matching and improve recruiter efficiency.",
-    tech: "Python, Scikit-learn, TF-IDF, Cosine Similarity, MongoDB, Flask",
-    github: "https://github.com/sandeepreddy0485/ai-resume-screening-system"
-  },
-  {
-    title: "Portfolio Website",
-    desc: "Developed a modern React portfolio site to showcase projects, certifications, and skills with animated UI interactions.",
-    tech: "React, Bootstrap, AOS",
-    github: "https://github.com/sandeepreddy0485"
-  }
-];
+  const featuredProjects = [
+    {
+      title: "EdgeShield AI",
+      badge: "🚧 In Development",
+      desc: "Developing a proof-of-concept IoT intrusion detection pipeline with anomaly detection and explainable threat insights.",
+      tech: "Python, ML, IoT, Threat Detection",
+      github: ""
+    },
+    {
+      title: "CropSense",
+      desc: "Developed an AI-powered crop recommendation experience with data preprocessing, model evaluation, and a full-stack interface that brings predictions to users end-to-end.",
+      tech: "Python, Scikit-learn, XGBoost, Full Stack",
+      github: ""
+    },
+    {
+      title: "AI Resume Screening & Ranking System",
+      desc: "Engineered an NLP-based ranking pipeline with TF-IDF and cosine similarity to automate candidate matching and improve recruiter efficiency.",
+      tech: "Python, NLP, Scikit-learn, MongoDB, Flask",
+      github: ""
+    },
+    {
+      title: "Smart Rainfall & Drought Prediction System",
+      desc: "Integrated 10+ years of climate datasets, engineered features, and benchmarked machine learning models to predict drought patterns and support analytical forecasting.",
+      tech: "Python, Scikit-learn, XGBoost, Pandas, NumPy",
+      github: ""
+    },
+    {
+      title: "LifeOS AI",
+      desc: "Built a modern AI-assisted productivity experience with a polished frontend and practical user flows that showcase contemporary web development practices.",
+      tech: "Next.js, TypeScript, React, UI/UX",
+      github: ""
+    },
+    {
+      title: "Sri Raksha Hospital Website",
+      desc: "Created a practical full-stack website for a real-world healthcare use case with structured content, responsive design, and user-friendly navigation.",
+      tech: "React, Full Stack, Web Development",
+      github: ""
+    }
+  ];
+
+  const otherProjects = [
+    "Smart Expense Tracker",
+    "Movie Recommendation System",
+    "GitHub Profile Viewer",
+    "Focus Timer",
+    "NVRMND Studio",
+    "Portfolio Website"
+  ];
 
   return (
     <section id="projects" className="container py-5">
-      <h2 className="section-title fs-3 mb-4">Projects</h2>
+      <h2 className="section-title fs-3 mb-4">Featured Projects</h2>
       <div className="row g-4">
-        {projects.map((p, idx) => (
+        {featuredProjects.map((p, idx) => (
           <div className="col-md-6" key={idx} data-aos="zoom-in">
             <div className="p-4 card-glass rounded shadow-sm h-100">
-              <h5 className="project-title mb-2">{p.title}</h5>
+              <div className="d-flex align-items-center gap-2 mb-2">
+                <h5 className="project-title mb-0">{p.title}</h5>
+                {p.badge && <span className="badge bg-warning text-dark">{p.badge}</span>}
+              </div>
               <p className="project-desc">{p.desc}</p>
               <div className="project-tech">{p.tech}</div>
               {p.github && (
-  <a
-    href={p.github}
-    target="_blank"
-    rel="noreferrer"
-    className="btn btn-outline-info mt-3"
-  >
-    View Project
-  </a>
-)}
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-outline-info mt-3"
+                >
+                  View Project
+                </a>
+              )}
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-5">
+        <h3 className="section-title fs-4 mb-3">Other Projects</h3>
+        <div className="row g-3">
+          {otherProjects.map((item, idx) => (
+            <div className="col-md-6 col-lg-4" key={idx} data-aos="fade-up">
+              <div className="p-3 card-glass rounded shadow-sm h-100">
+                <p className="mb-0">{item}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -415,7 +483,7 @@ function Contact() {
           <div className="p-4 card-glass rounded h-100">
             <h5>Let's collaborate</h5>
             <p className="custom-text">
-              I'm open to internships, freelance work, or software engineering roles. Send a message and let's talk about your next project.
+              I build web applications, APIs, and intelligent AI/ML products. I'm open to internships, freelance work, or software engineering roles. Send a message and let's talk about your next project.
             </p>
             <div className="d-flex flex-column gap-3 contact-card-links">
               <a className="contact-link text-decoration-none" href="mailto:yaramalasandeepreddy04@gmail.com"><FaEnvelope className="me-2" /> yaramalasandeepreddy04@gmail.com</a>
